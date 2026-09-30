@@ -2,6 +2,33 @@
 
 A Siemens **S7-1500 + WinCC Unified** automation project for controlling and monitoring three marine auxiliary ventilation fans with reusable PLC logic, HMI remote control, diagnostics, and alarm history.
 
+## Project Screenshots
+
+### Main Overview
+M01 and M02 running while M03 indicates an active fault.
+
+![Main Overview](docs/screenshots/01-overview.jpg)
+
+### Healthy Motor Operation
+M01 in a healthy running state with Run Command, Running, Ready, E-Stop and Thermal status active.
+
+![Healthy M01 Detail](docs/screenshots/02-healthy-detail.jpg)
+
+### Start Failure Diagnostic
+M03 Start Fail alarm after a run command is issued without valid running feedback.
+
+![M03 Start Failure](docs/screenshots/03-start-failure.jpg)
+
+### Alarm Center
+Motor alarms displayed in WinCC Unified Runtime.
+
+![Alarm Center](docs/screenshots/04-alarm-center.jpg)
+
+### Alarm History
+Historical alarm records showing state changes such as Incoming, Outgoing, Removed and Acknowledged.
+
+![Alarm History](docs/screenshots/05-alarm-history.jpg)
+
 ## Project Highlights
 
 - Siemens **CPU 1511-1 PN**
@@ -61,7 +88,7 @@ Each motor includes:
 - Run command and run feedback
 - Start Failure: no run feedback within ~3 s after start
 - Running Feedback Loss: feedback lost for ~1 s after confirmed operation
-- Thermal Fault: latched trip, reset permitted only after thermal condition is healthy again
+- Thermal Fault: latched trip, reset permitted only after the thermal condition is healthy again
 
 ## HMI
 
@@ -102,7 +129,7 @@ Validated using **S7-PLCSIM** and **WinCC Unified Runtime**:
 - Active alarms
 - Alarm history logging
 
-## Suggested Repository Layout
+## Repository Layout
 
 ```text
 marine-auxiliary-fan-control/
@@ -110,9 +137,14 @@ marine-auxiliary-fan-control/
 ├─ docs/
 │  ├─ architecture.md
 │  └─ screenshots/
+│     ├─ 01-overview.jpg
+│     ├─ 02-healthy-detail.jpg
+│     ├─ 03-start-failure.jpg
+│     ├─ 04-alarm-center.jpg
+│     └─ 05-alarm-history.jpg
 ├─ tia-project/
 │  └─ README.md
-└─ LICENSE
+└─ .gitignore
 ```
 
 ## Note
